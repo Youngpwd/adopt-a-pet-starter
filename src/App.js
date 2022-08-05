@@ -12,7 +12,7 @@ function App() {
     <Router>
       <div>
         <Navigation />
-        <Route path="/:type" >
+        <Route path="/:type?" >
           <HomePage />
         </Route>
       </div>
