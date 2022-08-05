@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 import { getPets } from '../../api/petfinder';
 import Hero from '../../components/hero';
 import Pet from '../../components/pet';
 
 const HomePage = () => {
   const [data, setData] = useState(null);
-  const type = ''; // Fix me!
+  const { type } = useParams(); 
 
   useEffect(() => {
     async function getPetsData() {
@@ -41,10 +42,7 @@ const HomePage = () => {
                   {
                     <img
                       className="pet-image"
-                      src={
-                        animal.photos[0]?.medium ||
-                        '/missing-animal.png'
-                      }
+                      src={animal.photos[0]?.medium || '/missing-animal.png'}
                       alt=""
                     />
                   }
