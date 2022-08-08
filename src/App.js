@@ -19,6 +19,9 @@ function App() {
           <Route path="/search">
             <SearchPage />
           </Route>
+          <Route path="/pet-details-not-found">
+            <PetDetailsNotFound />
+          </Route>
           <Route path="/:type?">
             <HomePage />
           </Route>
