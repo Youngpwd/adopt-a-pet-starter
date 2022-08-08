@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import HomePage from './pages/home';
 import SearchPage from './pages/search';
@@ -12,9 +12,14 @@ function App() {
     <Router>
       <div>
         <Navigation />
-        <Route path="/:type?" >
-          <HomePage />
-        </Route>
+        <Switch>
+          <Route path="/:type/:id">
+            <PetDetailsPage />
+          </Route>
+          <Route path="/:type?">
+            <HomePage />
+          </Route>
+        </Switch>
       </div>
     </Router>
   );
